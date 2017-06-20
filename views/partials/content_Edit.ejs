@@ -1,0 +1,22 @@
+
+ <!-- CONTENT -->
+    <div class="container">
+				<% if( article.user_id == user_id ){ %>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <form method="post" class="addArticle" action="/update/<%= article._id %>">
+									  <h1>Edit Article</h1>
+
+                    <input type="text" name="title" value="<%= article.title %>">
+                    <hr>
+                    <input type="text" name="image" value="<%= article.image %>">
+                    <hr>
+                    <textarea name="content" ><%= article.content %></textarea>
+                    <input type="submit" class="colorButton" value="Add Article">    
+                </form>        
+            </div>  
+						<% }else {%>    
+							<br><br><p>You are not supposed to be here... Nice try tho !</p> 
+						<% }%> 	     
+        </div>
+        <hr>

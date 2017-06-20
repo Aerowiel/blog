@@ -1,0 +1,36 @@
+ <!-- CONTENT -->
+    <div class="container">
+
+    <% articles.forEach( function( article ){ %>
+
+        
+            <div class="row" style="border-bottom:1px #606060 solid; padding-bottom:2%; padding-top:2%;">
+            <div class="col-lg-10 col-lg-offset-1">
+                
+                <h1><%= article.title %></h1>
+               
+                <p class="lead">
+                    by <a href="#"><%= article.username %></a>
+                </p>
+                <hr>
+                
+                <p><span class="glyphicon glyphicon-time"></span> <%= article.updated_at %></p>
+                <hr>
+                 
+                <img class="img-responsive" src="../../images/<%= article.image %>" alt="">
+                <hr>
+                 
+               
+                <p><%= article.content %></p> 
+
+                <% if( article.user_id == user_id ){ %>
+                    <a style="color:green" href="/edit/<%= article._id %>">Edit</a>
+                    <a style="color:red" href="/destroy/<%= article._id %>">Delete</a>   
+                <% }%> 
+            </div>           
+        </div>
+
+
+    <% }); %>   
+
+            
