@@ -21,7 +21,7 @@
                 <hr>
                  
                
-                <p><%= article.content %></p> 
+                <p><%- article.content %></p> 
 
                 <% if( article.user_id == user_id ){ %>
                     <a style="color:green" href="/edit/<%= article._id %>">Edit</a>
